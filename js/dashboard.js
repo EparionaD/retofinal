@@ -1,6 +1,7 @@
 console.log(data);
 
-function cargarSedes(){
+function cargarLista(){
+    //Cargando Sedes
     var arraySedes = [];
 
     for( sedes in data){
@@ -16,8 +17,71 @@ function cargarSedes(){
         optionSedes.appendChild(option);
     }
 
+    //Cargando Promociones
+    var arrayPromociones = [];
+
+    var etiqueta = document.getElementById("sedes");
+    //var nombreEtiqueta = document.getElementById("sedes").options[valorEtiqueta].text;
+
+
+    etiqueta.addEventListener("change", (event)=>{
+        var valorEtiqueta = document.getElementById("sedes").options.selectedIndex;
+        if(valorEtiqueta === 0){
+            var arrayPromociones = [];
+            var nombreEtiqueta = document.getElementById("sedes").options[valorEtiqueta].text;
+            for(promo in data[nombreEtiqueta]){
+                arrayPromociones.push(promo);
+            }
+            console.log(arrayPromociones);
+        }else if(valorEtiqueta === 1){
+            var arrayPromociones1 = [];
+            var nombreEtiqueta = document.getElementById("sedes").options[valorEtiqueta].text;
+            for(promo in data[nombreEtiqueta]){
+                arrayPromociones1.push(promo);
+            }
+            console.log(arrayPromociones1);
+        }else if(valorEtiqueta === 2){
+            var arrayPromociones2 = [];
+            var nombreEtiqueta = document.getElementById("sedes").options[valorEtiqueta].text;
+            for(promo in data[nombreEtiqueta]){
+                arrayPromociones2.push(promo);
+            }
+            console.log(arrayPromociones2);
+        }else if(valorEtiqueta === 3){
+            var arrayPromociones3 = [];
+            var nombreEtiqueta = document.getElementById("sedes").options[valorEtiqueta].text;
+            for(promo in data[nombreEtiqueta]){
+                arrayPromociones3.push(promo);
+            }
+            console.log(arrayPromociones3);
+        }
+    });
+
 }
-cargarSedes();
+cargarLista();
+
+/*var etiqueta = document.getElementById("sedes");
+var valorEtiqueta = document.getElementById("sedes").options.selectedIndex;
+var nombreEtiqueta = document.getElementById("sedes").options[valorEtiqueta].text;
+
+var prueba = data.LIMA;
+console.log(prueba);
+for( datos in prueba){
+    console.log(datos);
+}*/
+
+
+/*etiqueta.addEventListener("change", (event)=>{
+    var otra = document.getElementById("prueba1");
+    var valorEtiqueta = document.getElementById("sedes").options.selectedIndex;
+    if(valorEtiqueta === 0){
+        otra.textContent = "paso";
+    }else{
+        otra.textContent = "No paso";
+    }
+});*/
+
+
 /*var estudiantes = data.LIMA["2016-2"].students;
 console.log(estudiantes);
 
