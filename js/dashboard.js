@@ -1,6 +1,24 @@
 console.log(data);
 
-var estudiantes = data.LIMA["2016-2"].students;
+function cargarSedes(){
+    var arraySedes = [];
+
+    for( sedes in data){
+        arraySedes.push(sedes);
+    }
+
+    arraySedes.sort();
+    var optionSedes = document.getElementById("sedes");
+
+    for(i=0;i<arraySedes.length;i++){
+        var option = document.createElement("option");
+        option.innerHTML = arraySedes[i];
+        optionSedes.appendChild(option);
+    }
+
+}
+cargarSedes();
+/*var estudiantes = data.LIMA["2016-2"].students;
 console.log(estudiantes);
 
 var activos = 0;
@@ -18,4 +36,12 @@ var total = activos + inactivos;
 
 console.log(total+"total");
 console.log(activos+"activos");
-console.log(inactivos+"inactivos");
+console.log(inactivos+"inactivos");*/
+
+/*var arraySedes = [];
+
+for( sedes in data){
+    arraySedes.push(sedes);
+}
+
+console.log(arraySedes);*/
