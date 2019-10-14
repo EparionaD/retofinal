@@ -23,6 +23,7 @@ function cargarLista(){
 
 
     etiqueta.addEventListener("change", (event)=>{
+        //Borrar los elementos duplicados
         var contenedor = document.querySelector("#selector");
         var borrar = contenedor.querySelectorAll("select");
         for(i=0;i<borrar.length;i++){
@@ -53,6 +54,14 @@ function cargarLista(){
             //Agregando evento
             var etiqueta1 = document.getElementById("promocion1");
             etiqueta1.addEventListener("change", (event1)=>{
+                //Borra los elementos duplicados
+                var contenedor1 = document.querySelector("#alumnos");
+                var borrar1 = contenedor1.querySelectorAll("p");
+                for(i=0;i<borrar1.length;i++){
+                    var borrado1 = borrar1[i];
+                    borrado1.parentNode.removeChild(borrado1);
+                }
+
                 var valorPromocion = document.getElementById("promocion1").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion1").options[valorPromocion].text;
 
@@ -71,9 +80,21 @@ function cargarLista(){
                     }
                 }
                 var total = activos+inactivos;
-                console.log(activos);
-                console.log(inactivos);
-                console.log(total);
+                x = (inactivos*100)/total;
+                var porcentajeInactivos = Math.round(x);
+
+                var divActivos = document.createElement("p");
+                var contenido = document.createTextNode(activos);
+                divActivos.appendChild(contenido);
+
+                var divInactivos = document.createElement("p");
+                var contenidoI = document.createTextNode(porcentajeInactivos+"%");
+                divInactivos.appendChild(contenidoI);
+
+                var alumnos = document.getElementById("alumnos");
+                alumnos.appendChild(divActivos);
+                alumnos.appendChild(divInactivos);
+
             });
             //console.log(arrayPromociones);
         }else if(valorEtiqueta === 1){
@@ -98,6 +119,14 @@ function cargarLista(){
             //Agregando evento
             var etiqueta1 = document.getElementById("promocion2");
             etiqueta1.addEventListener("change", (event1)=>{
+                //Borra los elementos duplicados
+                var contenedor1 = document.querySelector("#alumnos");
+                var borrar1 = contenedor1.querySelectorAll("p");
+                for(i=0;i<borrar1.length;i++){
+                    var borrado1 = borrar1[i];
+                    borrado1.parentNode.removeChild(borrado1);
+                }
+
                 var valorPromocion = document.getElementById("promocion2").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion2").options[valorPromocion].text;
 
@@ -116,9 +145,21 @@ function cargarLista(){
                     }
                 }
                 var total = activos+inactivos;
-                console.log(activos);
-                console.log(inactivos);
-                console.log(total);
+                x = (inactivos*100)/total;
+                var porcentajeInactivos = Math.round(x);
+
+                var divActivos = document.createElement("p");
+                var contenido = document.createTextNode(activos);
+                divActivos.appendChild(contenido);
+
+                var divInactivos = document.createElement("p");
+                var contenidoI = document.createTextNode(porcentajeInactivos+"%");
+                divInactivos.appendChild(contenidoI);
+
+                var alumnos = document.getElementById("alumnos");
+                alumnos.appendChild(divActivos);
+                alumnos.appendChild(divInactivos);
+
             });
             console.log(arrayPromociones1);
         }else if(valorEtiqueta === 2){
@@ -143,6 +184,14 @@ function cargarLista(){
             //Agregando evento
             var etiqueta1 = document.getElementById("promocion3");
             etiqueta1.addEventListener("change", (event1)=>{
+                //Borra los elementos duplicados
+                var contenedor1 = document.querySelector("#alumnos");
+                var borrar1 = contenedor1.querySelectorAll("p");
+                for(i=0;i<borrar1.length;i++){
+                    var borrado1 = borrar1[i];
+                    borrado1.parentNode.removeChild(borrado1);
+                }
+
                 var valorPromocion = document.getElementById("promocion3").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion3").options[valorPromocion].text;
 
@@ -161,9 +210,21 @@ function cargarLista(){
                     }
                 }
                 var total = activos+inactivos;
-                console.log(activos);
-                console.log(inactivos);
-                console.log(total);
+                x = (inactivos*100)/total;
+                var porcentajeInactivos = Math.round(x);
+
+                var divActivos = document.createElement("p");
+                var contenido = document.createTextNode(activos);
+                divActivos.appendChild(contenido);
+
+                var divInactivos = document.createElement("p");
+                var contenidoI = document.createTextNode(porcentajeInactivos+"%");
+                divInactivos.appendChild(contenidoI);
+
+                var alumnos = document.getElementById("alumnos");
+                alumnos.appendChild(divActivos);
+                alumnos.appendChild(divInactivos);
+
             });
             console.log(arrayPromociones2);
         }else if(valorEtiqueta === 3){
@@ -188,6 +249,14 @@ function cargarLista(){
             //Agregando evento
             var etiqueta1 = document.getElementById("promocion4");
             etiqueta1.addEventListener("change", (event1)=>{
+                //Borra los elementos duplicados
+                var contenedor1 = document.querySelector("#alumnos");
+                var borrar1 = contenedor1.querySelectorAll("p");
+                for(i=0;i<borrar1.length;i++){
+                    var borrado1 = borrar1[i];
+                    borrado1.parentNode.removeChild(borrado1);
+                }
+
                 var valorPromocion = document.getElementById("promocion4").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion4").options[valorPromocion].text;
 
@@ -206,9 +275,21 @@ function cargarLista(){
                     }
                 }
                 var total = activos+inactivos;
-                console.log(activos);
-                console.log(inactivos);
-                console.log(total);
+                x = (inactivos*100)/total;
+                var porcentajeInactivos = Math.round(x);
+
+                var divActivos = document.createElement("p");
+                var contenido = document.createTextNode(activos);
+                divActivos.appendChild(contenido);
+
+                var divInactivos = document.createElement("p");
+                var contenidoI = document.createTextNode(porcentajeInactivos+"%");
+                divInactivos.appendChild(contenidoI);
+
+                var alumnos = document.getElementById("alumnos");
+                alumnos.appendChild(divActivos);
+                alumnos.appendChild(divInactivos);
+
             });
             console.log(arrayPromociones3);
         }
