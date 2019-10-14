@@ -1,5 +1,17 @@
 console.log(data);
 
+var prueba = data.LIMA["2017-1"].ratings;
+//console.log(prueba);
+
+var suma = 0;
+for(i=0;i<prueba.length;i++){
+    var superar = prueba[i].student.supera;
+    console.log(superar);
+    suma += superar;
+
+}
+console.log(suma);
+
 function cargarLista(){
     //Cargando Sedes
     var arraySedes = [];
@@ -54,19 +66,33 @@ function cargarLista(){
             //Agregando evento
             var etiqueta1 = document.getElementById("promocion1");
             etiqueta1.addEventListener("change", (event1)=>{
-                //Borra los elementos duplicados
+                //Borra los elementos duplicados 1
                 var contenedor1 = document.querySelector("#alumnos");
                 var borrar1 = contenedor1.querySelectorAll("p");
                 for(i=0;i<borrar1.length;i++){
                     var borrado1 = borrar1[i];
                     borrado1.parentNode.removeChild(borrado1);
                 }
+                //Borra los elementos duplicados 8
+                var contenedor2 = document.querySelector("#profesores");
+                var borrar2 = contenedor2.querySelectorAll("p");
+                for(i=0;i<borrar2.length;i++){
+                    var borrado2 = borrar2[i];
+                    borrado2.parentNode.removeChild(borrado2);
+                }
+                //Borra los elementos duplicados 9
+                var contenedor3 = document.querySelector("#jedi");
+                var borrar3 = contenedor3.querySelectorAll("p");
+                for(i=0;i<borrar3.length;i++){
+                    var borrado3 = borrar3[i];
+                    borrado3.parentNode.removeChild(borrado3);
+                }
 
                 var valorPromocion = document.getElementById("promocion1").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion1").options[valorPromocion].text;
 
                 var datosSedes = data[nombreEtiqueta][nombrePromocion];
-                //Ejercicio1
+                //Ejercicio1 y 2
 
                 var estudiantes = datosSedes.students;
                 var activos = 0;
@@ -94,6 +120,35 @@ function cargarLista(){
                 var alumnos = document.getElementById("alumnos");
                 alumnos.appendChild(divActivos);
                 alumnos.appendChild(divInactivos);
+
+                //Ejercicio 8 y 9
+
+                var profesores = datosSedes.ratings;
+                var total = 0;
+                var totalj = 0;
+                for(i=0;i<profesores.length;i++){
+                    total += profesores[i].teacher;
+                    totalj += profesores[i].jedi;
+                }
+                var promedioProfesores = (total/profesores.length).toFixed(2);
+                var promedioJedi = (totalj/profesores.length).toFixed(2);
+
+                //Agregando contenido a div profesores
+                var divProfesores = document.createElement("p");
+                var contenidoP = document.createTextNode(promedioProfesores);
+                divProfesores.appendChild(contenidoP);
+
+                var dprofesores = document.getElementById("profesores");
+                dprofesores.appendChild(divProfesores);
+
+                //Agregando contenido a div jedi
+                var divJedi = document.createElement("p");
+                var contenidoJ = document.createTextNode(promedioJedi);
+                divJedi.appendChild(contenidoJ);
+
+                var djedi = document.getElementById("jedi");
+                djedi.appendChild(divJedi);
+
 
             });
             //console.log(arrayPromociones);
@@ -126,12 +181,26 @@ function cargarLista(){
                     var borrado1 = borrar1[i];
                     borrado1.parentNode.removeChild(borrado1);
                 }
+                //Borra los elementos duplicados 8
+                var contenedor2 = document.querySelector("#profesores");
+                var borrar2 = contenedor2.querySelectorAll("p");
+                for(i=0;i<borrar2.length;i++){
+                    var borrado2 = borrar2[i];
+                    borrado2.parentNode.removeChild(borrado2);
+                }
+                //Borra los elementos duplicados 9
+                var contenedor3 = document.querySelector("#jedi");
+                var borrar3 = contenedor3.querySelectorAll("p");
+                for(i=0;i<borrar3.length;i++){
+                    var borrado3 = borrar3[i];
+                    borrado3.parentNode.removeChild(borrado3);
+                }
 
                 var valorPromocion = document.getElementById("promocion2").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion2").options[valorPromocion].text;
 
                 var datosSedes = data[nombreEtiqueta][nombrePromocion];
-                //Ejercicio1
+                //Ejercicio1 y 2
 
                 var estudiantes = datosSedes.students;
                 var activos = 0;
@@ -159,6 +228,34 @@ function cargarLista(){
                 var alumnos = document.getElementById("alumnos");
                 alumnos.appendChild(divActivos);
                 alumnos.appendChild(divInactivos);
+
+                //Ejercicio 8 y 9
+
+                var profesores = datosSedes.ratings;
+                var total = 0;
+                var totalj = 0;
+                for(i=0;i<profesores.length;i++){
+                    total += profesores[i].teacher;
+                    totalj += profesores[i].jedi;
+                }
+                var promedioProfesores = (total/profesores.length).toFixed(2);
+                var promedioJedi = (totalj/profesores.length).toFixed(2);
+
+                //Agregando contenido a div profesores
+                var divProfesores = document.createElement("p");
+                var contenidoP = document.createTextNode(promedioProfesores);
+                divProfesores.appendChild(contenidoP);
+
+                var dprofesores = document.getElementById("profesores");
+                dprofesores.appendChild(divProfesores);
+
+                //Agregando contenido a div jedi
+                var divJedi = document.createElement("p");
+                var contenidoJ = document.createTextNode(promedioJedi);
+                divJedi.appendChild(contenidoJ);
+
+                var djedi = document.getElementById("jedi");
+                djedi.appendChild(divJedi);
 
             });
             console.log(arrayPromociones1);
@@ -191,12 +288,26 @@ function cargarLista(){
                     var borrado1 = borrar1[i];
                     borrado1.parentNode.removeChild(borrado1);
                 }
+                //Borra los elementos duplicados 8
+                var contenedor2 = document.querySelector("#profesores");
+                var borrar2 = contenedor2.querySelectorAll("p");
+                for(i=0;i<borrar2.length;i++){
+                    var borrado2 = borrar2[i];
+                    borrado2.parentNode.removeChild(borrado2);
+                }
+                //Borra los elementos duplicados 9
+                var contenedor3 = document.querySelector("#jedi");
+                var borrar3 = contenedor3.querySelectorAll("p");
+                for(i=0;i<borrar3.length;i++){
+                    var borrado3 = borrar3[i];
+                    borrado3.parentNode.removeChild(borrado3);
+                }
 
                 var valorPromocion = document.getElementById("promocion3").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion3").options[valorPromocion].text;
 
                 var datosSedes = data[nombreEtiqueta][nombrePromocion];
-                //Ejercicio1
+                //Ejercicio1 y 2
 
                 var estudiantes = datosSedes.students;
                 var activos = 0;
@@ -224,6 +335,34 @@ function cargarLista(){
                 var alumnos = document.getElementById("alumnos");
                 alumnos.appendChild(divActivos);
                 alumnos.appendChild(divInactivos);
+
+                //Ejercicio 8 y 9
+
+                var profesores = datosSedes.ratings;
+                var total = 0;
+                var totalj = 0;
+                for(i=0;i<profesores.length;i++){
+                    total += profesores[i].teacher;
+                    totalj += profesores[i].jedi;
+                }
+                var promedioProfesores = (total/profesores.length).toFixed(2);
+                var promedioJedi = (totalj/profesores.length).toFixed(2);
+
+                //Agregando contenido a div profesores
+                var divProfesores = document.createElement("p");
+                var contenidoP = document.createTextNode(promedioProfesores);
+                divProfesores.appendChild(contenidoP);
+
+                var dprofesores = document.getElementById("profesores");
+                dprofesores.appendChild(divProfesores);
+
+                //Agregando contenido a div jedi
+                var divJedi = document.createElement("p");
+                var contenidoJ = document.createTextNode(promedioJedi);
+                divJedi.appendChild(contenidoJ);
+
+                var djedi = document.getElementById("jedi");
+                djedi.appendChild(divJedi);
 
             });
             console.log(arrayPromociones2);
@@ -256,12 +395,26 @@ function cargarLista(){
                     var borrado1 = borrar1[i];
                     borrado1.parentNode.removeChild(borrado1);
                 }
+                //Borra los elementos duplicados 8
+                var contenedor2 = document.querySelector("#profesores");
+                var borrar2 = contenedor2.querySelectorAll("p");
+                for(i=0;i<borrar2.length;i++){
+                    var borrado2 = borrar2[i];
+                    borrado2.parentNode.removeChild(borrado2);
+                }
+                //Borra los elementos duplicados 9
+                var contenedor3 = document.querySelector("#jedi");
+                var borrar3 = contenedor3.querySelectorAll("p");
+                for(i=0;i<borrar3.length;i++){
+                    var borrado3 = borrar3[i];
+                    borrado3.parentNode.removeChild(borrado3);
+                }
 
                 var valorPromocion = document.getElementById("promocion4").options.selectedIndex;
                 var nombrePromocion = document.getElementById("promocion4").options[valorPromocion].text;
 
                 var datosSedes = data[nombreEtiqueta][nombrePromocion];
-                //Ejercicio1
+                //Ejercicio1 y 2
 
                 var estudiantes = datosSedes.students;
                 var activos = 0;
@@ -290,6 +443,34 @@ function cargarLista(){
                 alumnos.appendChild(divActivos);
                 alumnos.appendChild(divInactivos);
 
+                //Ejercicio 8 y 9
+
+                var profesores = datosSedes.ratings;
+                var total = 0;
+                var totalj = 0;
+                for(i=0;i<profesores.length;i++){
+                    total += profesores[i].teacher;
+                    totalj += profesores[i].jedi;
+                }
+                var promedioProfesores = (total/profesores.length).toFixed(2);
+                var promedioJedi = (totalj/profesores.length).toFixed(2);
+
+                //Agregando contenido a div profesores
+                var divProfesores = document.createElement("p");
+                var contenidoP = document.createTextNode(promedioProfesores);
+                divProfesores.appendChild(contenidoP);
+
+                var dprofesores = document.getElementById("profesores");
+                dprofesores.appendChild(divProfesores);
+
+                //Agregando contenido a div jedi
+                var divJedi = document.createElement("p");
+                var contenidoJ = document.createTextNode(promedioJedi);
+                divJedi.appendChild(contenidoJ);
+
+                var djedi = document.getElementById("jedi");
+                djedi.appendChild(divJedi);
+
             });
             console.log(arrayPromociones3);
         }
@@ -297,45 +478,3 @@ function cargarLista(){
 
 }
 cargarLista();
-
-/*var etiqueta = document.getElementById("sedes");
-var valorEtiqueta = document.getElementById("sedes").options.selectedIndex;
-var nombreEtiqueta = document.getElementById("sedes").options[valorEtiqueta].text;
-
-var prueba = data.LIMA;
-console.log(prueba);
-for( datos in prueba){
-    console.log(datos);
-}*/
-
-
-/*etiqueta.addEventListener("change", (event)=>{
-    var otra = document.getElementById("prueba1");
-    var valorEtiqueta = document.getElementById("sedes").options.selectedIndex;
-    if(valorEtiqueta === 0){
-        otra.textContent = "paso";
-    }else{
-        otra.textContent = "No paso";
-    }
-});*/
-
-
-/*var estudiantes = data.AREQUIPA["2017-1"].students;
-console.log(estudiantes);
-
-var activos = 0;
-var inactivos = 0;
-
-for( i=0; i < estudiantes.length; i++){
-    if (estudiantes[i].active === true){
-        activos++
-    }else{
-        inactivos++
-    }
-}
-
-var total = activos + inactivos;
-
-console.log(total+"total");
-console.log(activos+"activos");
-console.log(inactivos+"inactivos");*/
